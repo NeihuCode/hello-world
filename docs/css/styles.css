@@ -6,11 +6,12 @@ h1 {
 
 h1:hover {
   color: red;
-  transform: rotate(10deg);
+  transform: rotate(50deg);
 }
 
 .carousel {
   max-width: 600px;
+  transform: rotate(10deg);
 }
 
 .carousel figure {
