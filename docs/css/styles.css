@@ -1,3 +1,17 @@
+h1 {
+  transition: 0.5s;
+  transform-origin: left center;
+}
+
 h1:hover{
-  color:yellow
+  color:yellow;
+  transform: rotate(10deg);
+}
+
+.carousel {
+  max-width: 600px;
+}
+
+.carousel figure {
+  margin: 0;
 }
