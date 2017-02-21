@@ -5,7 +5,7 @@ h1 {
 }
 
 h1:hover {
-  color: red;
+  color: black;
   transform: rotate(50deg);
 }
 
