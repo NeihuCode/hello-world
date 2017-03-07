@@ -13,7 +13,7 @@ h1:hover {
   max-width: 600px;
 }
 
-.carousel:hover {
+.carouselwapper:hover {
   max-width: 800px;
   background-color: gray;
 }
