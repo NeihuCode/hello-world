@@ -16,3 +16,15 @@ h1:hover {
 .carousel figure {
   margin: 0;
 }
+
+.carousel.wrapper {
+  maz-width: 600px;
+  transition: 0.5;
+}
+
+.carousel-wrapper:hover {
+  maz-width: calc(600px + 4rem);
+  background-cloc: lightgrey;
+  padding: 2rem;
+  padding-bottom: 1px;
+}
