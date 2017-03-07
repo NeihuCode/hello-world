@@ -18,6 +18,12 @@ h1:hover {
   background-color: gray;
 }
 
+.carouselwapper {
+  max-width: 600p;
+  padding: 2rem;
+  padding-bottom: 1 px;
+}
+
 .carousel figure {
   margin: 0;
 }
