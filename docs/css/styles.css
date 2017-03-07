@@ -16,12 +16,13 @@ h1:hover {
 .carouselwrapper:hover {
   max-width: 800px;
   background-color: gray;
+  padding: 2rem;
+  padding-bottom: 1px;
 }
 
 .carouselwrapper {
   max-width: 600px;
-  padding: 2rem;
-  padding-bottom: 1px;
+  transition(5s);
 }
 
 .carousel figure {
