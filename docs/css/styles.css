@@ -1,6 +1,6 @@
 h1 {
   color: green;
-  transition: 0.5s; 
+  transition: 0.5s;
   transform-origin: left center;
 }
 
@@ -11,7 +11,11 @@ h1:hover {
 
 .carousel {
   max-width: 600px;
+}
 
+.carousel:hover {
+  max-width: 800px;
+  background-color: gray;
 }
 
 .carousel figure {
