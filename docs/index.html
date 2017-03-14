@@ -33,6 +33,29 @@
     dots: true,
     speed: 500
   });
+
+  // Create an img element.
+  var mustache = $('<img class="mustache" src="https://www.kasandbox.org/programming-images/misc/mustache.png" alt="cat-stache">');
+
+  // Definte a click handler.
+  function positionMustache(event) {
+    // Add CSS to the mustache to un-hide it.
+    mustache.css({"display": "block"});
+    // Add CSS to position the mustache.
+    mustache.css({
+      positon: 'absolute',
+      left: event.clientX - 60,
+      top: event.clientY - 12
+    });
+  };
+
+  // Add CSS to the mustache to hide it.
+  mustache.css("display", "none");
+  // Add the mustache to our carousel.
+  $('.carousel-wrapper')
+    .append(mustache)
+    // Add a click event handler too.
+    .click(positionMustache);
 </script>
 
 </body>
