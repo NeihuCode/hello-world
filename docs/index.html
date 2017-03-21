@@ -31,11 +31,22 @@
       speed: 500
     });
 
+    var mustache = $('<img class="mustache" src="https://www.kasandbox.org/programming-images/misc/mustache.png" alt="cat-stache">');
+
     function mustache(event){
       console.log("what! stop clicking");
+      mustache.css({"display": "block"});
+      mustache.css({
+        position: 'absolute',
+        left: event.pageX - 58,
+        top: event.pageY - 14
+      });
     }
 
+    mustache.css("display","none");
+
     $('.carouselwrapper')
+    .apppend(mustache)
     .click(mustache);
 
     </script>
