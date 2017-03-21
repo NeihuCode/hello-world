@@ -33,7 +33,7 @@
 
     var mustache = $('<img class="mustache" src="https://www.kasandbox.org/programming-images/misc/mustache.png" alt="cat-stache">');
 
-    function mustache(event){
+    function positionMustache(event){
       console.log("what! stop clicking");
       mustache.css({"display": "block"});
       mustache.css({
@@ -41,13 +41,13 @@
         left: event.pageX - 58,
         top: event.pageY - 14
       });
-    }
+    };
 
-    mustache.css("display","none");
+    mustache.css("display", "none");
 
     $('.carouselwrapper')
     .append(mustache)
-    .click(mustache);
+    .click(positionMustache);
 
     </script>
   </body>
