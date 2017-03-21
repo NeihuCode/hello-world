@@ -1,11 +1,11 @@
 h1 {
-  color: green;
+  color: black;
   transition: 0.5s;
   transform-origin: left center;
 }
 
 h1:hover {
-  color:blue;
+  color: red;
   transform: rotate(10deg);
 }
 
