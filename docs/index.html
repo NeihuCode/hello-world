@@ -46,8 +46,12 @@ function PigletMustach(event) {
 
 // Add the mustache to our carousel
 $('.carousel-wrapper')
+.append(mustache)
   //Add a click event handler too.
   .click(PigletMustach);
+
+  // Create a img.
+  var mustache = $('<img class="mustache"src="https://www.kasandbox.org/progamming-images/misc/mustache.png" alt="cat-stache">');
 </script>
 
 </body>
