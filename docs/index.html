@@ -29,12 +29,26 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
 
-</body>
-</html>
+
 
 <script>
 $('.carousel').slick({
   dots: true,
   speed: 500
 });
+
+
+//Define a click handler.
+function PigletMustach(event) {
+  // Log the event.
+  console.log(event);
+}
+
+// Add the mustache to our carousel
+$('.carousel-wrapper')
+  //Add a click event handler too.
+  .click(PigletMustach);
 </script>
+
+</body>
+</html>
