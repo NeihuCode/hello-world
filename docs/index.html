@@ -40,8 +40,14 @@
 var mustache = $('<img class="mustache" src="https://www.kasandbox.org/programming-images/misc/mustache.png" alt="cat-stache">');
 
 function positionMustache(event) {
-  console.log(event)
-  };
+  console.log(event);
+  mustache.css({"display": "block"});
+  mustache.css({
+    position: 'absolute',
+    left: event.pageX - 50,
+    top: event.pageY - 14
+  });
+};
 
 mustache.css("display", "none");
 $('.carousel-wrapper')
