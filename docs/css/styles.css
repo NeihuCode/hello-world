@@ -37,6 +37,16 @@ label {
   display: block;
 }
 
+#madlib {
+  text-align: right;
+}
+#madlib input,
+#madlib select,
+#madlib button {
+  width: 50%;
+  margin-left: 10px;
+}
+
 .story {
   display: none;
 }
