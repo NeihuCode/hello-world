@@ -35,6 +35,7 @@ h1:hover {
 
 label {
   display: block;
+  margin: 5px 0;
 }
 
 #madlib {
