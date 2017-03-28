@@ -6,7 +6,7 @@ h1 {
 
 h1:hover {
   color: black;
-  transform: rotate(10deg);
+  transform: rotate(90deg);
 }
 
 .carousel {
