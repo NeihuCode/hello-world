@@ -27,3 +27,7 @@ h1:hover{
 .carousel figure {
   margin: 0;
 }
+
+label {
+  display: block;
+}
