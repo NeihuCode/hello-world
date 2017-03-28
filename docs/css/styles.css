@@ -31,3 +31,15 @@ h1:hover {
   position: absolute;
   width: 100px;
 }
+label {
+  display: block;
+}
+.story {
+  display: none;
+}
+.story span{
+  display: inline-block;
+  padding: 5px;
+  background-color: powderblue;
+  border-radius: 5px;
+}
