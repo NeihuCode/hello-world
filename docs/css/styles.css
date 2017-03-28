@@ -36,14 +36,14 @@ h1:hover {
 label {
   display: block;
   margin: 5px 0;
+  text-align: right;
 }
 
 #madlib {
-  text-align: right;
+  width: 66%;
 }
 #madlib input,
-#madlib select,
-#madlib button {
+#madlib select {
   width: 50%;
   margin-left: 10px;
 }
