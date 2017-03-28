@@ -32,3 +32,7 @@ h1:hover {
   position: absolute;
   width: 100px;
 }
+
+label {
+  display: block;
+}
