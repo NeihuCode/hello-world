@@ -36,3 +36,14 @@ h1:hover {
 label {
   display: block;
 }
+
+.story {
+  display: none;
+}
+
+.story span {
+  display: inline-block;
+  padding: 5px;
+  background-color: powderblue;
+  border-radius: 5px;
+}
