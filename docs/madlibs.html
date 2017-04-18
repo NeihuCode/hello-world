@@ -97,11 +97,20 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
 var words = [];
-$('#madlib input, #madlib select').each(fuction() {
+$('#madlib input, #madlib select').each(function() {
   var elementName = $(this).attr('name');
   words.push(elementName);
 });
-console.log(words);
+
+function showStory(event) {
+  event.preventDefault();
+
+  $('.error').hide();
+  $('.story').hide();
+}
+
+
+$('#madlib').submit(showStory);
 </script>
 
 </body>
