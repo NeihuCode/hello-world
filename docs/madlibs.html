@@ -96,6 +96,12 @@
 <!-- Add  JavaScript files at bottom of the file. -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
+var words = [];
+$('#madlib input, #madlib select').each(fuction() {
+  var elementName = $(this).attr('name');
+  words.push(elementName);
+});
+console.log(words);
 </script>
 
 </body>
