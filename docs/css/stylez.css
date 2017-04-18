@@ -36,8 +36,33 @@ h1:hover {
 
 label {
   display: block;
+  margin: 5px 0;
+  text-align: right;
 }
 
+#madlib {
+  width: 66%;
+}
+#madlib input,
+#madlib select {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.error {
+  font-weigh: bold;
+  color: red;
+}
+
+.error,
 .story {
   display: none;
+}
+
+.story span {
+  display: inline-block;
+  padding: 5px;
+  background-color: powderblue;
+  border-radius: 5px;
+  min-width: 2rem;
 }
