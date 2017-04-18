@@ -4,79 +4,97 @@
   <title>Madlibs</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-  <body>
-    <form>
-      <h1>
-      Mad lib!
-      </h1>
-      <label>
-        Adjective:
-        <input type="text" name="adjectives1"><br>
-      </label>
+<body>
+<form id="madlib">
+  <h1>
+  Mad lib!
+  </h1>
+  <label>
+    Adjective:
+    <input type="text" name="adjective1">
+  </label>
 
-      <label>
-        Adjective:
-        <input type="text" name="adjectives2">
-      </label>
+  <label>
+    Adjective:
+    <input type="text" name="adjective2">
+  </label>
 
-      <label>
-        Type of bird:
-        <select name="bird">
-          <option>chicken</option>
-          <option>emu</option>
-          <option>yellow-bellied</option>
-          <option>red-footed booby</option>
-          <option>Andean cock-of-the-rock</option>
-          <option>flamingo</option>
-          <option>swan</option>
-          <option>Florence Nightinagle</option>
-          <option>Russell Crowe</option>
-        </select>
-      </label>
-      <label>
-        Room in a house:
-        <input type="text" name="Room">
-      </label>
-      <label>
-        Verb(past tense):
-        <input type="text" name="Verb">
-      </label>
-      <label>
-        Relative's name:
-        <input type="text" name="Name">
-      </label>
-      <label>
-        Noun:
-        <input type="text" name="Noun">
-      </label>
-      <label>
-        A liquid:
-        <input type="text" name="liquid">
-      </label>
-      <label>
-        Verb ending in -ing:
-        <input type="text" name="Verb-ing">
-      </label>
-      <label>
-        Part of boddy:
-        <input type="text" name="Body">
-      </label>
-      <label>
-        Plural Noun:
-        <input type="text" name="Noun2">
-      </label>
-      <label>
-        Verb ending in -ing:
-        <input type="text" name="Verb-ing2">
-      </label>
-      <label>
-        Noun:
-        <input type="text" name="Noun3">
-      </label>
-      <button type="submit">
-        Show me the story
-      </button>
-    </form>
+  <label>
+    Type of bird:
+    <select name="bird">
+      <option>chicken</option>
+      <option>emu</option>
+      <option>yellow-bellied sapsucker</option>
+      <option>red-footed booby</option>
+      <option>Andean cock-of-the-rock</option>
+      <option>flamingo</option>
+      <option>swan</option>
+      <option>Florence Nightingale</option>
+      <option>Russell Crowe</option>
+    </select>
+  </label>
+  <label>
+    Room in a house:
+    <input type="text" name="room">
+  </label>
+  <label>
+    Verb (past tense):
+    <input type="text" name="verb1">
+  </label>
+  <label>
+    Verb:
+    <input type="text" name="verb2">
+  </label>
+  <label>
+    Relative's name:
+    <input type="text" name="relative">
+  </label>
+  <label>
+    Noun:
+    <input type="text" name="noun1">
+  </label>
+  <label>
+    A liquid:
+    <input type="text" name="liquid">
+  </label>
+  <label>
+    Verb ending in -ing:
+    <input type="text" name="verb3">
+  </label>
+  <label>
+    Part of body (plural):
+    <input type="text" name="body">
+  </label>
+  <label>
+    Plural Noun:
+    <input type="text" name="noun2">
+  </label>
+  <label>
+    Verb ending in -ing:
+    <input type="text" name="verb4">
+  </label>
+  <label>
+    Noun:
+    <input type="text" name="noun3">
+  </label>
+  <button type="submit">
+    Show me the story
+  </button>
+</form>
+
+<p class="error">Please fill out the entire form!</p>
+
+<p class="story">
+  <b>It was a <span id="adjective1"></span>, cold November day.</b> I woke up to the
+  <span id="adjective2"></span> smell of <span id="bird"></span> roasting in the
+  <span id="room"></span> downstairs. I <span id="verb1"></span> down the stairs
+  to see if I could help <span id="verb2"></span> the dinner. My mom said, "See
+  if <span id="relative"></span> needs a fresh <span id="noun1"></span>." so I
+  carried a tray of glasses full of <span id="liquid"></span> into the
+  <span id="verb3"></span> room. When I got there, I couldn't believe my
+  <span id="body"></span>! <em>There were <span id="noun2"></span>
+  <span id="verb4"></span> on the <span id="noun3"></span>!</em>
+</p>
 
 <!-- Add  JavaScript files at bottom of the file. -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
