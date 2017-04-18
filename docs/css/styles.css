@@ -48,6 +48,12 @@ label {
   margin-left: 10px;
 }
 
+.error {
+  font-weigh: bold;
+  color: red;
+}
+
+.error,
 .story {
   display: none;
 }
@@ -57,4 +63,5 @@ label {
   padding: 5px;
   background-color: powderblue;
   border-radius: 5px;
+  min-width: 2rem;
 }

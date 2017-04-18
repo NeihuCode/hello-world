@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Mad libs!</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -79,12 +80,14 @@
   <button type="submit">Show me the story</button>
 </form>
 
+<p class="error">Please fill out the entire form!</p>
+
 <p class="story">
   <b>It was a <span id="adjective1"></span>, cold November day.</b> I woke up to the
   <span id="adjective2"></span> smell of <span id="bird"></span> roasting in the
   <span id="room"></span> downstairs. I <span id="verb1"></span> down the stairs
   to see if I could help <span id="verb2"></span> the dinner. My mom said, "See
-  if <span id="relative"></span> needs a fresh <span id="noun"></span>." so I
+  if <span id="relative"></span> needs a fresh <span id="noun1"></span>." so I
   carried a tray of glasses full of <span id="liquid"></span> into the
   <span id="verb3"></span> room. When I got there, I couldn't believe my
   <span id="body"></span>! <em>There were <span id="noun2"></span>
@@ -94,6 +97,44 @@
 <!-- Add  JavaScript files at bottom of the file. -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
+// Find the words in the form.
+var words = [];
+$('#madlib input, #madlib select').each(function() {
+  var elementName = $(this).attr('name');
+  words.push(elementName);
+});
+
+function showStory(event) {
+  // Prevent the page from reloading.
+  event.preventDefault();
+
+  // Hide previous stories/errors.
+  $('.error').hide();
+  $('.story').hide();
+
+  // Keep track of errors.
+  var errors = false;
+
+  words.forEach(function(word) {
+    // Grab the value from the form element.
+    var formValue = $('[name="' + word + '"]').val();
+    // Insert the value in the story paragraph.
+    $('#' + word).html(formValue);
+    // Note errors.
+    if (!formValue) {
+      errors = true;
+    }
+  });
+
+  // Show the story or the error.
+  if (errors) {
+    $('.error').show();
+  } else {
+    $('.story').show();
+  }
+}
+
+$('#madlib').submit(showStory);
 </script>
 
 </body>
