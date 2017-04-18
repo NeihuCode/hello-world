@@ -107,6 +107,22 @@ function showStory(event) {
 
   $('.error').hide();
   $('.story').hide();
+
+  var errors = false;
+
+  words.forEach(function(word) {
+    var formValue = $('[name="'+ word + '"]').val();
+    $('#' + word).html(formValue);
+    if (!formValue) {
+      errors = true;
+    }
+  });
+
+  if (errors) {
+    $('.error').show();
+  } else {
+    $('.story').show();
+  }
 }
 
 
