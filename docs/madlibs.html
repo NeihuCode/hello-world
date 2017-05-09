@@ -112,7 +112,7 @@ function showStory(event) {
 
   words.forEach(function(word) {
     var formValue = $('[name="'+ word + '"]').val();
-    $('#' + word).html(formValue);
+    // $('#' + word).html(formValue);
     if (!formValue) {
       errors = true;
     }
@@ -122,6 +122,17 @@ function showStory(event) {
     $('.error').show();
   } else {
     $('.story').show();
+    var x = 0;
+    function idc(){
+      var formValue = $('[name="'+ words[x] + '"]').val();
+      $('#' + words[x]).html(formValue);
+      x ++ ;
+      if (x < words.length){
+        setTimeout(idc, 1000);
+
+      }
+    }
+    idc();
   }
 }
 
