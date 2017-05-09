@@ -99,6 +99,41 @@
 <!-- Add  JavaScript files at bottom of the file. -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
+    var words = [];
+    $('#madlib input, #madlib select').each(function() {
+      var elementName = $(this).attr('name');
+      words.push(elementName);
+    })
+    function showStory(event){
+      event.preventDefault();
+      $('.error').hide();
+      $('.story').hide();
+      var error =  false;
+      words.forEach(function(word){
+        var formValue = $('[name="' + word + '"]').val();
+        //$('#' + word).html(formValue);
+        if(!formValue){
+          error = true;
+        }
+      });
+      if (error){
+        $('.error').show();
+      }else{
+        $('.story').show();
+
+        var x = 0;
+        function IDontCare(){
+          var formValue = $('[name="' + words[x] + '"]').val();
+          $('#' + words[x]).html(formValue);
+          x++;
+          if (x < words.length){
+            setTimeout(IDontCare,1000);
+          }
+        }
+        IDontCare()
+      }
+    }
+    $('#madlib').submit(showStory);
     </script>
   </body>
 </html>
