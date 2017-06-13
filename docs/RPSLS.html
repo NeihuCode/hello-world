@@ -4,17 +4,66 @@
   <title> yousuck </title>
 </head>
 <body>
+  <div id="results">
+    <h1>The winner is..</h1>
+    <p><span id = "user1"></span> v. <span id = "user2"></span></p>
+    <h1 id = "winner"></h1>
+  </div>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
-    function ComputerMathRandom(){
-      return Math.floor(3*Math.random());
+    function computerChoice(){
+      switch (Math.floor(5*Math.random())) {
+        case 0:
+          return 'rock';
+        case 1:
+          return 'paper';
+        case 2:
+          return 'scissors';
+        case 3:
+          return 'lizard';
+        case 4:
+          return 'spock';
+      }
     }
 
     $(document).keydown(userChoice);
-
     function userChoice(event){
       console.log(event);
       console.log(event.which);
+    }
+    var user1choice = 0, user2choice = 0
+    function userChoice (event){
+      switch(event.which){
+        case "A".charCodeAt():
+          if (user1choice === 0){
+            user1choice = "lizard";
+          }
+          break;
+        case "S".charCodeAt():
+          if (user1choice === 0){
+            user1choice = "rock";
+          }
+          break;
+        case "D".charCodeAt():
+          if (user1choice === 0){
+            user1choice = "paper";
+          }
+          break;
+        case "F".charCodeAt():
+          if (user1choice === 0){
+            user1choice = "scissors";
+          }
+          break;
+        case "V".charCodeAt():
+          if (user1choice === 0){
+            user1choice = "spock";
+          }
+          break;
+      }
+      if(user1choice){
+        user2choice = computerChoice();
+        $('#user1').text(user1choice);
+      }
     }
 
   </script>
