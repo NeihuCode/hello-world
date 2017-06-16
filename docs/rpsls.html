@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>Rock-Paper-Scissors-Lizard-Spock</title>
+   <link rel="stylesheet" href="css/rpsls.css">
+   <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy" rel="stylesheet">
+</head>
+<body>
+
+<div class="rules">
+  <h1 class="rules__name">
+    <span>Rock</span>
+    <span>Paper</span>
+    <span>Scissors</span>
+    <span>Lizard</span>
+    <span>Spock</span>
+  </h1>
+  <h2 class="rules__rules">RULES</h2>
+  <ul>
+    <li>Scissors cuts Paper.</li>
+    <li>Paper covers Rock.</li>
+    <li>Rock crushes Lizard.</li>
+    <li>Lizard poisons Spock.</li>
+    <li>Spock smashes Scissors.</li>
+    <li>Scissors decapitates Lizard.</li>
+    <li>Lizard eats Paper.</li>
+    <li>Paper disproves Spock.</li>
+    <li>Spock vaporizes Rock.</li>
+    <li>(And as it always has) Rock crushes Scissors.</li>
+  </ul>
+</div>
+
+<div class="center">
+  <div class="results is-hidden">
+    <h2 id="winner"></h2>
+    <div id="winnerReason"></div>
+    <img class="results__image1" id="user1image" src="images/Spock.svg" alt="Spock" width="200" height="200">
+    <img class="results__image2" id="user2image" src="images/rock.svg" alt="rock" width="200" height="200">
+  </div>
+
+  <div class="instructions">
+    <img src="images/rpsls.svg" alt="" width="560" height="309">
+    <input name="user1Name" type="text" value="User 1" class="instructions__user1">
+    <input name="user2Name" type="text" value="User 2" class="instructions__user2">
+    <div class="instructions__computer">Computer</div>
+    <div class="instructions__alt">
+      <h3>User 1:</h3>
+      <ul>
+        <li>Press <kbd>A</kbd> for Lizard</li>
+        <li>Press <kbd>S</kbd> for Rock</li>
+        <li>Press <kbd>D</kbd> for Paper</li>
+        <li>Press <kbd>F</kbd> for Scissors</li>
+        <li>Press <kbd>V</kbd> for Spock</li>
+      </ul>
+      <h3>User 2:</h3>
+      <ul>
+        <li>Press <kbd>;</kbd> for Lizard</li>
+        <li>Press <kbd>L</kbd> for Rock</li>
+        <li>Press <kbd>K</kbd> for Paper</li>
+        <li>Press <kbd>J</kbd> for Scissors</li>
+        <li>Press <kbd>N</kbd> for Spock</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<fieldset class="users">
+  <legend>Number of users:</legend>
+  <div>
+    <label>
+      <input type="radio" name="numberOfUsers" value="1" checked> <span>1</span>
+    </label>
+    <label>
+      <input type="radio" name="numberOfUsers" value="2"> <span>2</span>
+    </label>
+  </div>
+</fieldset>
+
+<!-- Add  JavaScript files at bottom of the file. -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+var user1Choice = 0, user2Choice = 0;
+var reasons = {
+  scissorspaper: 'Scissors cuts Paper.',
+  paperscissors: 'Scissors cuts Paper.',
+  paperrock: 'Paper covers Rock.',
+  rockpaper: 'Paper covers Rock.',
+  rocklizard: 'Rock crushes Lizard.',
+  lizardrock: 'Rock crushes Lizard.',
+  lizardSpock: 'Lizard poisons Spock.',
+  Spocklizard: 'Lizard poisons Spock.',
+  Spockscissors: 'Spock smashes Scissors.',
+  scissorsSpock: 'Spock smashes Scissors.',
+  scissorslizard: 'Scissors decapitates Lizard.',
+  lizardscissors: 'Scissors decapitates Lizard.',
+  lizardpaper: 'Lizard eats Paper.',
+  paperlizard: 'Lizard eats Paper.',
+  paperSpock: 'Paper disproves Spock.',
+  Spockpaper: 'Paper disproves Spock.',
+  Spockrock: 'Spock vaporizes Rock.',
+  rockSpock: 'Spock vaporizes Rock.',
+  rockscissors: 'Rock crushes Scissors.',
+  scissorsrock: 'Rock crushes Scissors.',
+  rockrock: '',
+  paperpaper: '',
+  scissorsscissors: '',
+  lizardlizard: '',
+  SpockSpock: ''
+};
+
+function startGame() {
+  $('.results').toggleClass('is-hidden');
+  user1Choice = user2Choice = 0;
+}
+
+function computerChoice() {
+  switch (Math.floor(5*Math.random())) {
+    case 0:
+      return 'rock';
+    case 1:
+      return 'paper';
+    case 2:
+      return 'scissors';
+    case 3:
+      return 'lizard';
+    case 4:
+      return 'Spock';
+  }
+}
+
+function pickNumberOfUsers() {
+  if ($('[name="numberOfUsers"]:checked').val() === '1') {
+    $('.instructions__computer').show();
+    $('.instructions__user2').hide();
+  } else {
+    $('.instructions__computer').hide();
+    $('.instructions__user2').show();
+  }
+}
+
+function userChoice(event) {
+  // Don't hijack typing in a form element.
+  if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
+    return;
+  }
+  var user1Name, user2Name;
+  switch (event.which) {
+    case "A".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = 'lizard';
+      }
+      break;
+    case "S".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = 'rock';
+      }
+      break;
+    case "D".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = 'paper';
+      }
+      break;
+    case "F".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = 'scissors';
+      }
+      break;
+    case "V".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = 'Spock';
+      }
+      break;
+    case ";".charCodeAt():
+      if (user2Choice === 0) {
+        user2Choice = 'lizard';
+      }
+      break;
+    case "L".charCodeAt():
+      if (user2Choice === 0) {
+        user2Choice = 'rock';
+      }
+      break;
+    case "K".charCodeAt():
+      if (user2Choice === 0) {
+        user2Choice = 'paper';
+      }
+      break;
+    case "J".charCodeAt():
+      if (user2Choice === 0) {
+        user2Choice = 'scissors';
+      }
+      break;
+    case "N".charCodeAt():
+      if (user2Choice === 0) {
+        user2Choice = 'Spock';
+      }
+      break;
+  }
+
+  // Get user names.
+  user1Name = $('input[name="user1Name"]').val();
+  user2Name = $('input[name="user2Name"]').val();
+
+  // If this is a 1 player game, have the computer choose.
+  if (user1Choice && $('[name="numberOfUsers"]:checked').val() === '1') {
+    user2Choice = computerChoice();
+    user2Name = 'Computer';
+  }
+  // Show the winner.
+  if ($('.results').hasClass('is-hidden') && user1Choice && user2Choice) {
+    $('#user1image').attr({src: 'images/' + user1Choice + '.svg', alt: user1Choice});
+    $('#user2image').attr({src: 'images/' + user2Choice + '.svg', alt: user2Choice});
+
+    // Find the winner.
+    if (user1Choice === user2Choice) {
+      $('#winner').text('Tie!');
+    } else if (
+      user1Choice === "Spock" && (user2Choice === "rock" || user2Choice === "scissors")
+      || user1Choice === "lizard" && (user2Choice === "Spock" || user2Choice === "paper")
+      || user1Choice === "rock" && (user2Choice === "lizard" || user2Choice === "scissors")
+      || user1Choice === "paper" && (user2Choice === "rock" || user2Choice === "Spock")
+      || user1Choice === "scissors" && (user2Choice === "paper" || user2Choice === "lizard")
+    ) {
+      $('#winner').text(user1Name + ' wins!');
+    } else {
+      $('#winner').text(user2Name + ' wins!');
+    }
+    $('#winnerReason').text(reasons[user1Choice + user2Choice]);
+    $('.results').toggleClass('is-hidden');
+
+    // Re-start the game in 3 seconds.
+    setTimeout(startGame, 3000);
+  }
+}
+
+// Set event handlers.
+$('input[name="numberOfUsers"]').click(pickNumberOfUsers);
+$(document).keydown(userChoice);
+// $('input[type="text"]').keydown(function (event) { event.stopPropagation(); });
+</script>
+</body>
+</html>
