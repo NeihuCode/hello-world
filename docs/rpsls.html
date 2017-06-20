@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RPSLS</title>
+</head>
+<body>
+  <div id="result">
+    <h1>The winner is...</h1>
+    <p><span id="user1"></span> v. <span id="user2"></span></p>
+    <h1 id="winner"></h1>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+var user1choice = 0, user2choice = 0;
+function ComputerChoice() {
+  switch (Math.floor(5*Math.random())){
+    case 0:
+      return "lizard"
+    case 1:
+      return "rock"
+    case 2:
+      return "paper"
+    case 3:
+      return "scissors"
+    case 4:
+      return "spock"
+
+  }
+}
+$(document).keydown(userChoice);
+function userChoice(event){
+  console.log(event.which);
+  switch (event.which){
+    case "A".charCodeAt():
+      if (user1choice === 0){
+        user1choice="lizard";
+      }
+      break;
+    case "S".charCodeAt():
+      if (user1choice === 0){
+        user1choice="rock";
+      }
+      break;
+    case "D".charCodeAt():
+      if (user1choice === 0){
+        user1choice="paper";
+      }
+      break;
+    case "F".charCodeAt():
+      if (user1choice === 0){
+        user1choice="scissors";
+      }
+      break;
+    case "V".charCodeAt():
+      if (user1choice === 0){
+        user1choice="spock";
+      }
+      break;
+  }
+  if(user1choice){
+    user2choice = ComputerChoice();
+    $('#user1').text(user1choice);
+  }
+}
+</script>
+</body>
+</html>
