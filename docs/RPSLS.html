@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+
+</head>
+<body>
+  <div id="results">
+    <hi>The winner is...</hi>
+    <p><span id="user1"></span>v.<span id="user2"></span></p>
+    <hi id="winner"></hi>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+  var user1 = 0, user2 = 0;
+  $(document).keydown(myFunction);
+  function myFunction(event) {
+    switch(event.which){
+      case"A".charCodeAt(0):
+        if(user1 === 0){
+          user1 = "L";
+        }
+      break;
+      case"S".charCodeAt(0):
+        if(user1 === 0){
+          user1 = "R";
+        }
+      break;
+      case"D".charCodeAt(0):
+        if(user1 === 0){
+          user1 = "P";
+        }
+      break;
+      case"F".charCodeAt(0):
+        if(user1 === 0){
+          user1 = "SC";
+        }
+      break;
+      case"V".charCodeAt(0):
+        if(user1 === 0){
+          user1 = "SP";
+        }
+      break;
+    }
+    if(user1){
+      user2 = computerChoice();
+      console.log(user1,user2);
+      $('#user1').text(user1)
+      $('#user2').text(user2)
+    }
+  }
+  function computerChoice(){
+
+    switch (Math.floor(5*Math.random())) {
+      case 0:
+        return "L"
+      case 1:
+        return "R"
+      case 2:
+        return "P"
+      case 3:
+        return "SC"
+      case 4:
+        return "SP"
+    }
+  }
+  </script>
+</body>
+</html>

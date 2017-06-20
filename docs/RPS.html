@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+  $(document).keydown(myFunction);
+  function myFunction(event) {
+    console.log(event.which);
+    if (event.which == "R".charCodeAt(0)){
+      if (computerChoice() == 0){
+        alert("Tie");
+      }else if (computerChoice() == 1){
+        alert("You Lost");
+      }else{
+        alert("You Won");
+      }
+    }else if (event.which == "P".charCodeAt(0)){
+      if (computerChoice() == 0){
+        alert("You Won");
+      }else if (computerChoice() == 1){
+        alert("Tie");
+      }else{
+        alert("You Lost");
+      }
+    }else if(event.which == "S".charCodeAt(0)){
+      if (computerChoice() == 0){
+        alert("You Lost");
+      }else if (computerChoice() == 1){
+        alert("You Won");
+      }else{
+        alert("Tie");
+      }
+    }
+
+}
+  function computerChoice(){
+    return Math.floor(3*Math.random());
+
+  }
+  </script>
+</body>
+</html>
