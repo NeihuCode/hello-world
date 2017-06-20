@@ -63,6 +63,18 @@
       if(user1choice){
         user2choice = computerChoice();
         $('#user1').text(user1choice);
+
+        if (user1Choice === user2Choice){
+          $('#winner').text('Tie');
+        }
+        else if (user1Choice === "Spock" && (user2Choice === "rock" || user2Choice === "scissors")
+          || user1Choice === "lizard" && (user2Choice === "Spock" || user2Choice === "paper")
+          || user1Choice === "rock" && (user2Choice === "lizard" || user2Choice === "scissors")
+          || user1Choice === "paper" && (user2Choice === "rock" || user2Choice === "Spock")
+          || user1Choice === "scissors" && (user2Choice === "paper" || user2Choice === "lizard")
+        ) {
+
+        }
       }
     }
 
