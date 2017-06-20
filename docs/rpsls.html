@@ -59,7 +59,22 @@ function userChoice(event){
   }
   if(user1choice){
     user2choice = ComputerChoice();
+    console.log(user1choice,user2choice)
     $('#user1').text(user1choice);
+    $('#user2').text(user2choice);
+    if(user1choice === user2choice){
+      $('#winner').text('Tie!');
+    } else if (user1choice === "spock" && (user2choice === "rock" || user2choice === "scissor")
+      || user1choice === "lizard" && (user2choice === "spock" || user2choice === "paper")
+      || user1choice === "rock" && (user2choice === "lizard" || user2choice === "paper")
+      || user1choice === "paper" && (user2choice === "rock" || user2choice === "spock")
+      || user1choice === "scissor" && (user2choice === "paper" || user2choice === "lizard")
+    ) {
+      $('#winner').text('user1 wins');
+      else {
+        $('#winner').text('user2 wins');
+      }
+    }
   }
 }
 </script>
