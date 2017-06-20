@@ -10,13 +10,6 @@
     <h1 id="winner"></h1>
   </div>
 
-if (user1Choice) {
-  user2Choice = computerChoice();
-  $'#user1').text(user1Choice);
-  $('#user2').text(user2Choice);
-  if (user1Choice == "lizard"
-
-}
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
@@ -69,6 +62,22 @@ function userChoice (event) {
   }
   if(user1Choice){
     user2Choice = computerChoice();
+    if (user1Choice) {
+      user2Choice = computerChoice();
+      $'#user1').text(user1Choice);
+      $('#user2').text(user2Choice);
+      if(user1Choice === user2Choice){
+        $('#winner').text('Advance to go - do not collect 200');
+      }
+    else  if (user1Choice === "Spock" &&(user2Choice === "rock"||user2Choice === "scissors")
+        || user1Choice === "lizard" &&(user2Choice === "Spock" ||user2Choice === "paper")
+        || user1Choice === "rock" &&(user2Choice === "lizard" ||user2Choice === "scissors")
+        || user1Choice === "paper" &&(user2Choice === "rock" ||user2Choice === "Spock")
+        || user1Choice === "scissors" &&(user2Choice === "paper" ||user2Choice === "lizard")
+      ) {
+          $('#winner').text('You have won - advance to go and collect 200');
+      }
+    }
 
   }
 }
