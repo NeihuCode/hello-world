@@ -6,9 +6,9 @@
 </head>
 <body>
   <div id="results">
-    <hi>The winner is...</hi>
+    <h1>The winner is...</h1>
     <p><span id="user1"></span>v.<span id="user2"></span></p>
-    <hi id="winner"></hi>
+    <h1 id="winner"></h1>
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
@@ -47,6 +47,17 @@
       console.log(user1,user2);
       $('#user1').text(user1)
       $('#user2').text(user2)
+      if(user1===user2){
+        $('#winner').text('Tie!');
+      }else if (user1==="SP" &&(user2==="R" || user2==="SC")
+                || user1==="L" &&(user2==="SP" || user2==="P")
+                || user1==="R" &&(user2==="L" || user2==="SC")
+                || user1==="SC" &&(user2==="P" || user==="L")
+                || user==="P" &&(user2==="R" || user2==="SP")){
+        $('#winner').text("User1 Wins");
+      }else{
+        $('#winner').text("User2 Wins");
+      }
     }
   }
   function computerChoice(){
