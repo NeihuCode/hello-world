@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LEEEEEEEEROOOOOOOOOYYYYY JENKIIIIIIIIIIIIIIINNNNNSSSSSSSSS!</title>
+</head>
+<body>
+  <div id="results">
+    <h1>The winner is...</h1>
+    <p><span id="user1"></span> V. <span id="user2"></span></p>
+    <h1 id="winner"></h1>
+  </div>
+
+if (user1Choice) {
+  user2Choice = computerChoice();
+  $'#user1').text(user1Choice);
+  $('#user2').text(user2Choice);
+  if (user1Choice == "lizard"
+
+}
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+var user1Choice = 0, user2Choice = 0;
+
+function computerChoice() {
+  switch (Math.floor(5*Math.random())) {
+    case 0:
+    return 'rock';
+    case 1:
+    return 'paper';
+    case 2:
+    return 'scissors';
+    case 3:
+    return 'lizard';
+    case 4:
+    return 'spock';
+
+  }
+
+}
+$(document).keydown(userChoice);
+function userChoice (event) {
+  switch (event.which) {
+    case "A".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = "rock";
+      }
+      break;
+    case "S".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = "paper";
+      }
+      break;
+    case "D".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = "scissors";
+      }
+      break;
+    case "F".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = "lizard";
+      }
+      break;
+    case "V".charCodeAt():
+      if (user1Choice === 0) {
+        user1Choice = "spock";
+      }
+      break;
+  }
+  if(user1Choice){
+    user2Choice = computerChoice();
+
+  }
+}
+
+
+</script>
+</body>
+</html>
