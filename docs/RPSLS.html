@@ -1,17 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock Paper Scissors</title>
-
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Rock Paper Scissors Lizard Spock</title>
+   <link rel="stylesheet" href="css/rpsls.css">
+   <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy" rel="stylesheet">
 </head>
 <body>
-  <div id="results">
+
+<div class="rules">
+  <h1>
+    <span>Rock</span>
+    <span>Paper</span>
+    <span>Scissors</span>
+    <span>Lizard</span>
+    <span>Spock</span>
+  </h1>
+  <h2>RULES</h2>
+  <ul>
+    <li>Scissors cuts Paper.</li>
+    <li>Paper covers Rock.</li>
+    <li>Rock crushes Lizard.</li>
+    <li>Lizard poisons Spock.</li>
+    <li>Spock smashes Scissors.</li>
+    <li>Scissors decapitates Lizard.</li>
+    <li>Lizard eats Paper.</li>
+    <li>Paper disproves Spock.</li>
+    <li>Spock vaporizes Rock.</li>
+    <li>(And as it always has) Rock crushes Scissors.</li>
+  </ul>
+</div>
+
+<div class="center">
+  <div>
     <h1>The winner is...</h1>
     <p><span id="user1"></span>v.<span id="user2"></span></p>
     <h1 id="winner"></h1>
+
+    <img id="user1image" src="images/Spock.svg" alt="Spock" width="200" height="200">
+    <img id="user2image" src="images/rock.svg" alt="rock" width="200" height="200">
   </div>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script>
+
+  <div>
+    <img src="images/rpsls.svg" alt="" width="560" height="309">
+    <input name="user1Name" type="text" value="User 1">
+    <input name="user2Name" type="text" value="User 2">
+    <div>Computer</div>
+    <div class="instructions__alt">
+      <h3>User 1:</h3>
+      <ul>
+        <li>Press <kbd>A</kbd> for Lizard</li>
+        <li>Press <kbd>S</kbd> for Rock</li>
+        <li>Press <kbd>D</kbd> for Paper</li>
+        <li>Press <kbd>F</kbd> for Scissors</li>
+        <li>Press <kbd>V</kbd> for Spock</li>
+      </ul>
+      <h3>User 2:</h3>
+      <ul>
+        <li>Press <kbd>;</kbd> for Lizard</li>
+        <li>Press <kbd>L</kbd> for Rock</li>
+        <li>Press <kbd>K</kbd> for Paper</li>
+        <li>Press <kbd>J</kbd> for Scissors</li>
+        <li>Press <kbd>N</kbd> for Spock</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<fieldset>
+  <legend>Number of users:</legend>
+  <div>
+    <label>
+      <input type="radio" name="numberOfUsers" value="1" checked> <span>1</span>
+    </label>
+    <label>
+      <input type="radio" name="numberOfUsers" value="2"> <span>2</span>
+    </label>
+  </div>
+</fieldset>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
   var user1 = 0, user2 = 0;
   $(document).keydown(myFunction);
   function myFunction(event) {
