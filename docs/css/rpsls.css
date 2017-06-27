@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Lakki Reddy', sans-serif;
+}
+input {
+  font-family: 'Lakki Reddy', sans-serif;
+}
+.center {
+  width: 850px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.rules {
+  margin: 10px 0;
+  padding: 20px 0;
+  color: white;
+  background-color: #333;
+  line-height: 1.5;
+}
+.rules > * {
+  width: 850px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.rules__name {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.rules__name span {
+  display: block;
+  margin: 0 5px;
+}
+.rules__rules {
+  text-align: center;
+  letter-spacing: 10px;
+}
+.rules ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.rules li {
+  margin: 0 5px;
+  padding: 0;
+  list-style-type: none;
+}
+.instructions {
+  position: relative;
+}
+.instructions__alt {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.instructions img {
+  vertical-align: bottom;
+}
+.instructions__user1,
+.instructions__user2,
+.instructions__computer {
+  position: absolute;
+  top: 207px;
+  width: 130px;
+  height: 25px;
+  color: #fff;
+  text-align: center;
+  border: 0;
+  background-color: transparent;
+  font-size: 1rem;
+}
+.instructions__user1 {
+  left: 190px;
+}
+.instructions__user2,
+.instructions__computer {
+  right: 190px;
+}
+.instructions__user2 {
+  display: none;
+}
+.results {
+  position: relative;
+  height: 70px;
+}
+.results.is-hidden {
+  visibility: hidden;
+}
+.results h2 {
+  margin: 0;
+}
+.results__image1 {
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+.results__image2 {
+  position: absolute;
+  top: 0;
+  right: 100px;
+}
+
+.users {
+  margin: 0;
+  padding: 10px;
+  border: 0;
+}
+.users legend,
+.users > div {
+  float: left;
+  margin-right: 20px;
+}
+.users legend {
+  padding: 3px 0 0;
+}
+
+label {
+  cursor: pointer;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + span {
+  display: inline-block;
+  min-width: 50px;
+  border-radius: 4px;
+  padding: 8px 10px 0;
+  color: #000;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 1;
+}
+input[type="radio"]:checked + span {
+  color: #fff;
+  background-color: #000;
+}
