@@ -1,17 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>RPSLS</title>
+   <link rel="stylesheet" href="css/rpsls.css">
+   <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy" rel="stylesheet">
 </head>
 <body>
-  <div id="result">
+
+<div class="rules">
+  <h1>
+    <span>Rock</span>
+    <span>Paper</span>
+    <span>Scissors</span>
+    <span>Lizard</span>
+    <span>Spock</span>
+  </h1>
+  <h2>RULES</h2>
+  <ul>
+    <li>Scissors cuts Paper.</li>
+    <li>Paper covers Rock.</li>
+    <li>Rock crushes Lizard.</li>
+    <li>Lizard poisons Spock.</li>
+    <li>Spock smashes Scissors.</li>
+    <li>Scissors decapitates Lizard.</li>
+    <li>Lizard eats Paper.</li>
+    <li>Paper disproves Spock.</li>
+    <li>Spock vaporizes Rock.</li>
+    <li>(And as it always has) Rock crushes Scissors.</li>
+  </ul>
+</div>
+
+<div class="center">
+  <div>
     <h1>The winner is...</h1>
     <p><span id="user1"></span> v. <span id="user2"></span></p>
     <h1 id="winner"></h1>
+
+    <div id="winnerReason"></div>
+    <img id="user1image" src="images/Spock.svg" alt="Spock" width="200" height="200">
+    <img id="user2image" src="images/rock.svg" alt="rock" width="200" height="200">
   </div>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <div>
+    <img src="images/rpsls.svg" alt="" width="560" height="309">
+    <input name="user1Name" type="text" value="User 1">
+    <input name="user2Name" type="text" value="User 2">
+    <div>Computer</div>
+    <div class="instructions__alt">
+      <h3>User 1:</h3>
+      <ul>
+        <li>Press <kbd>A</kbd> for Lizard</li>
+        <li>Press <kbd>S</kbd> for Rock</li>
+        <li>Press <kbd>D</kbd> for Paper</li>
+        <li>Press <kbd>F</kbd> for Scissors</li>
+        <li>Press <kbd>V</kbd> for Spock</li>
+      </ul>
+      <h3>User 2:</h3>
+      <ul>
+        <li>Press <kbd>;</kbd> for Lizard</li>
+        <li>Press <kbd>L</kbd> for Rock</li>
+        <li>Press <kbd>K</kbd> for Paper</li>
+        <li>Press <kbd>J</kbd> for Scissors</li>
+        <li>Press <kbd>N</kbd> for Spock</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<fieldset>
+  <legend>Number of users:</legend>
+  <div>
+    <label>
+      <input type="radio" name="numberOfUsers" value="1" checked> <span>1</span>
+    </label>
+    <label>
+      <input type="radio" name="numberOfUsers" value="2"> <span>2</span>
+    </label>
+  </div>
+</fieldset>
+
+<!-- Add  JavaScript files at bottom of the file. -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
 var user1choice = 0, user2choice = 0;
+var reasons = {
+  scissorspaper: 'Scissors cuts Paper.',
+  paperscissors: 'Scissors cuts Paper.',
+  paperrock: 'Paper covers Rock.',
+  rockpaper: 'Paper covers Rock.',
+  rocklizard: 'Rock crushes Lizard.',
+  lizardrock: 'Rock crushes Lizard.',
+  lizardSpock: 'Lizard poisons Spock.',
+  Spocklizard: 'Lizard poisons Spock.',
+  Spockscissors: 'Spock smashes Scissors.',
+  scissorsSpock: 'Spock smashes Scissors.',
+  scissorslizard: 'Scissors decapitates Lizard.',
+  lizardscissors: 'Scissors decapitates Lizard.',
+  lizardpaper: 'Lizard eats Paper.',
+  paperlizard: 'Lizard eats Paper.',
+  paperSpock: 'Paper disproves Spock.',
+  Spockpaper: 'Paper disproves Spock.',
+  Spockrock: 'Spock vaporizes Rock.',
+  rockSpock: 'Spock vaporizes Rock.',
+  rockscissors: 'Rock crushes Scissors.',
+  scissorsrock: 'Rock crushes Scissors.',
+  rockrock: '',
+  paperpaper: '',
+  scissorsscissors: '',
+  lizardlizard: '',
+  SpockSpock: ''
+};
+
 function ComputerChoice() {
   switch (Math.floor(5*Math.random())){
     case 0:
